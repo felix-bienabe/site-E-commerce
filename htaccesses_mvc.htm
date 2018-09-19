@@ -1,0 +1,10 @@
+current_work_folder/.htaccess with this text inside:
+RewriteEngine on
+RewriteBase /PHP_Rush_MVC/
+RewriteRule ^{}$ Webroot/ [L]
+RewriteRule (.*) Webroot/$1 [L]
+current_work_folder/webroot/.htaccess with this text inside:
+RewriteEngine On
+RewriteCond %{REQUEST\_FILENAME} !-d
+RewriteCond %{REQUEST\_FILENAME} !-f
+RewriteRule ^{}(.*)$ index.php?$1 [QSA,L]
